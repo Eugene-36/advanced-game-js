@@ -48,7 +48,7 @@ export default class Tile {
   waitForTransition(animation = false) {
     return new Promise((resolve) => {
       this.#tileElement.addEventListener(
-        animation ? 'animationed' : 'transitionend',
+        animation ? 'animationend' : 'transitionend',
         resolve,
         {
           once: true,

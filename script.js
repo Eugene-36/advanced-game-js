@@ -58,6 +58,8 @@ async function handleInput(e) {
   grid.randomEmptyCell().tile = newTile;
 
   if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+    console.log('Попал в это блок');
+
     newTile.waitForTransition(true).then(() => {
       alert('You Lose');
     });
