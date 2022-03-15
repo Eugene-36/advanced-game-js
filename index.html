@@ -5,10 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+
     <title>Document</title>
   </head>
   <body>
-    <div id="game-board"></div>
+    <header class="head">
+      <button data-help-btn="" class="icon-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            style="fill: #ccc"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+          ></path>
+        </svg>
+      </button>
+      <button data-stats-btn="" class="icon-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          enable-background="new 0 0 24 24"
+          viewBox="0 0 24 24"
+        >
+          <rect fill="none" height="24" width="24"></rect>
+          <g>
+            <path
+              style="fill: #ccc"
+              d="M7.5,21H2V9h5.5V21z M14.75,3h-5.5v18h5.5V3z M22,11h-5.5v10H22V11z"
+            ></path>
+          </g>
+        </svg>
+      </button>
+      <h1 class="title">2048 Daily</h1>
+    </header>
+    <main>
+      <div id="game-board"></div>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/b64993b165.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./script.js" type="module"></script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+
 *,
 *::before,
 *::after {
@@ -8,6 +10,7 @@
 body {
   background-color: #333;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -16,8 +19,6 @@ body {
 }
 
 #game-board {
-
-
   display: grid;
   grid-template-columns: repeat(var(--grid-size), var(--cell-size));
   grid-template-rows: repeat(var(--grid-size), var(--cell-size));
@@ -62,4 +63,40 @@ body {
     opacity: 0.5;
     transform: scale(0);
   }
+}
+
+.head {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  min-width: 618px;
+
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  font-size: max(5vmin, 20px);
+  flex-grow: 1;
+  color: #ccc;
+}
+.icon-btn {
+  width: 5vmin;
+  height: 5vmin;
+  min-width: 35px;
+  min-height: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: fill 150ms ease-in-out;
+  outline-color: var(--text-color-light);
+  flex-shrink: 0;
+}
+.question-mark {
+  color: #ccc;
+}
+.size-icon {
+  font-size: 30px;
+  cursor: pointer;
 }
