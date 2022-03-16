@@ -9,6 +9,8 @@ grid.randomEmptyCell().tile = new Tile(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
 setupInput();
 
+
+
 function setupInput() {
   window.addEventListener('keydown', handleInput, { once: true });
 }
@@ -54,6 +56,8 @@ async function handleInput(e) {
 
   // Other code
   grid.cells.forEach((cell) => cell.mergeTiles());
+  // setResultOnBoard
+
   const newTile = new Tile(gameBoard);
   grid.randomEmptyCell().tile = newTile;
 
@@ -134,3 +138,5 @@ function canMove(cells) {
     });
   });
 }
+
+

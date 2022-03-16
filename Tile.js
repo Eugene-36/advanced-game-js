@@ -12,13 +12,16 @@ export default class Tile {
   }
 
   get value() {
+    // console.log('this value', this.#value);
     return this.#value;
   }
 
   set value(v) {
     this.#value = v;
     this.#tileElement.textContent = v;
+
     const power = Math.log2(v);
+
     const backgroundLightness = 100 - power * 9;
 
     this.#tileElement.style.setProperty(

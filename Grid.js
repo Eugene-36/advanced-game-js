@@ -1,7 +1,8 @@
 const GRID_SIZE = 4;
 const CELL_SIZE = 20;
 const CELL_GAP = 2;
-
+const resultElement = document.querySelector('[data-total-result]');
+console.log(resultElement);
 export default class Grid {
   #cells;
   constructor(gridElement) {
@@ -16,7 +17,8 @@ export default class Grid {
         Math.floor(index / GRID_SIZE)
       );
     });
-    console.log('this.cells', this.cells);
+
+    // console.log('this.cells', this.cells);
   }
 
   get cells() {
@@ -40,9 +42,6 @@ export default class Grid {
       return cellGrid;
     }, []);
   }
-  //   get cells() {
-  //     return this.#cells;
-  //   }
 
   get #emptyCells() {
     return this.#cells.filter((cell) => cell.tile == null);
@@ -56,6 +55,7 @@ export default class Grid {
 
 class Cell {
   #cellElement;
+
   #x;
   #y;
   #tile;
@@ -65,7 +65,6 @@ class Cell {
     this.#x = x;
     this.#y = y;
   }
-
   get x() {
     return this.#x;
   }
@@ -102,8 +101,17 @@ class Cell {
     );
   }
   mergeTiles() {
+    let arrow = [];
     if (this.tile == null || this.mergeTile == null) return;
     this.tile.value = this.tile.value + this.mergeTile.value;
+    let tileValue = this.tile.value; //! Нужно только это value
+
+    if (localStorage.getItem('calculationResult')) {
+      arrow = JSON.parse(localStorage.getItem('calculationResult'));
+    }
+    arrow.push(tileValue);
+    localStorage.setItem('calculationResult', JSON.stringify(arrow));
+
     this.mergeTile.remove();
     this.mergeTile = null;
   }
@@ -121,3 +129,25 @@ function createCellElements(gridElement) {
 
   return cells;
 }
+
+//! Зачистить локалСторадже после обновления страницы
+window.addEventListener('DOMContentLoaded', () => {
+  localStorage.setItem('calculationResult', JSON.stringify([]));
+});
+
+// //! Adding result to screen
+function implementResult() {
+  let arrow = JSON.parse(localStorage.getItem('calculationResult'));
+
+  if (arrow.length !== 0) {
+    console.log('arrow-arrow', arrow);
+    arrow.reduce((acc, next) => {
+      return (resultElement.textContent = acc + next);
+    });
+  }
+}
+// implementResult();
+
+setInterval(() => {
+  implementResult();
+}, 1000);
