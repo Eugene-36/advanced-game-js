@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -41,6 +45,30 @@
       </div>
     </header>
     <main>
+      <!-- Маодальное окно -->
+      <div class="modal-overlay">
+        <div class="modal-container common">
+          <h3 class="common">How To Play</h3>
+          <p class="text-pr">
+            Combine tiles of the same number in an attempt to create a tile with
+            the value 2048. Pressing the arrow keys or swiping across the game
+            board will move all tiles in the direction of the key pressed/swipe.
+            After all the tiles are done moving a new tile with the value of 2
+            or 4 will be created in a random empty cell. Two tiles with the same
+            number will merge when they collide to create a single tile with
+            double the value. The game is over when there are no valid ways for
+            you to move the tiles.
+          </p>
+          <p class="text-pr">
+            IMPORTANT: Each day a new game is generated which is exactly the
+            same for everyone in the world. Come back each day and share your
+            results with your friends so you can claim your title as the best
+            2048 player.
+          </p>
+          <button class="close-btn">Х</button>
+        </div>
+      </div>
+      <!-- ====== -->
       <div id="game-board"></div>
     </main>
     <script
@@ -48,5 +76,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./script.js" type="module"></script>
+    <script src="./Modal.js" type="module"></script>
   </body>
 </html>

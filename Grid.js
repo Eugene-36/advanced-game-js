@@ -140,14 +140,10 @@ function implementResult() {
   let arrow = JSON.parse(localStorage.getItem('calculationResult'));
 
   if (arrow.length !== 0) {
-    console.log('arrow-arrow', arrow);
     arrow.reduce((acc, next) => {
       return (resultElement.textContent = acc + next);
     });
   }
 }
-// implementResult();
 
-setInterval(() => {
-  implementResult();
-}, 1000);
+setInterval(() => implementResult());
