@@ -2,7 +2,7 @@ const GRID_SIZE = 4;
 const CELL_SIZE = 20;
 const CELL_GAP = 2;
 const resultElement = document.querySelector('[data-total-result]');
-console.log(resultElement);
+
 export default class Grid {
   #cells;
   constructor(gridElement) {

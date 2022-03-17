@@ -2,8 +2,6 @@ const modalButtons = document.querySelectorAll('[data-modal-button]');
 const modalButtonsClose = document.querySelectorAll('[data-modal-close]');
 const allModals = document.querySelectorAll('[data-modal]');
 
-console.log('modalButtons', modalButtons);
-
 //Кнопки открыть модалку
 modalButtons.forEach((item) => {
   item.addEventListener('click', (e) => {

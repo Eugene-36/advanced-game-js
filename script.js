@@ -3,7 +3,6 @@ import Tile from './Tile.js';
 import { implementResult } from './Grid.js';
 import { looseCart } from './Modal.js';
 
-console.log('implementResult', implementResult);
 const gameBoard = document.getElementById('game-board');
 
 const grid = new Grid(gameBoard);
@@ -145,6 +144,5 @@ function canMove(cells) {
 let intervalID;
 
 if (JSON.parse(localStorage.getItem('calculationResult')) !== 0) {
-  console.log('Попал в этот блок');
   intervalID = setInterval(() => implementResult());
 }
