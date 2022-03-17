@@ -37,7 +37,6 @@ allModals.forEach((item) => {
 });
 
 export function looseCart() {
-  console.log('allModals', allModals);
   allModals.forEach((modal) => {
     if (modal.id === 'modal-2') {
       modal.classList.remove('hidden');
