@@ -5,6 +5,7 @@ const btnInfo = document.querySelector('[data-help-btn=""]'),
 console.log('btnInfo', btnInfo);
 
 btnInfo.addEventListener('click', (e) => {
+  e.preventDefault();
   if (e.target) {
     modalOverly.classList.add('open-modal');
   }
@@ -12,6 +13,7 @@ btnInfo.addEventListener('click', (e) => {
 });
 
 closeBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   if (e.target) {
     modalOverly.classList.remove('open-modal');
   }
@@ -20,6 +22,7 @@ closeBtn.addEventListener('click', (e) => {
 // when user clicks modal-btn add .open-modal to modal-overlay
 // when user clicks close-btn remove .open-modal from modal-overlay
 modalOverly.addEventListener('click', (e) => {
+  e.preventDefault();
   const some = e.target.classList.contains('common');
 
   if (!some) {

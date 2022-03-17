@@ -131,7 +131,7 @@ function createCellElements(gridElement) {
 }
 
 //! Зачистить локалСторадже после обновления страницы
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', (e) => {
   localStorage.setItem('calculationResult', JSON.stringify([]));
 });
 
