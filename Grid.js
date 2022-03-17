@@ -136,7 +136,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 });
 
 // //! Adding result to screen
-function implementResult() {
+export function implementResult() {
   let arrow = JSON.parse(localStorage.getItem('calculationResult'));
 
   if (arrow.length !== 0) {
@@ -145,5 +145,3 @@ function implementResult() {
     });
   }
 }
-
-setInterval(() => implementResult());
