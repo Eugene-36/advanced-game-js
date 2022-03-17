@@ -1,31 +1,83 @@
-const btnInfo = document.querySelector('[data-help-btn=""]'),
-  modalOverly = document.querySelector('.modal-overlay'),
-  closeBtn = document.querySelector('.close-btn'),
-  container = document.querySelector('.modal-container');
-console.log('btnInfo', btnInfo);
+// const btnInfo = document.querySelector('[data-help-btn=""]'),
+//   modalOverly = document.querySelector('.modal-overlay'),
+//   closeBtn = document.querySelector('.close-btn'),
+//   container = document.querySelector('.modal-container');
+// console.log('btnInfo', btnInfo);
 
-btnInfo.addEventListener('click', (e) => {
-  e.preventDefault();
-  if (e.target) {
-    modalOverly.classList.add('open-modal');
-  }
-  console.log('клик на модал кнопку');
+// btnInfo.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   if (e.target) {
+//     modalOverly.classList.add('open-modal');
+//   }
+//   console.log('клик на модал кнопку');
+// });
+
+// closeBtn.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   if (e.target) {
+//     modalOverly.classList.remove('open-modal');
+//   }
+// });
+
+// // when user clicks modal-btn add .open-modal to modal-overlay
+// // when user clicks close-btn remove .open-modal from modal-overlay
+// modalOverly.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   const some = e.target.classList.contains('common');
+
+//   if (!some) {
+//     modalOverly.classList.remove('open-modal');
+//   }
+// });
+
+//======================================================
+const modalButtons = document.querySelectorAll('[data-modal-button]');
+const modalButtonsClose = document.querySelectorAll('[data-modal-close]');
+const allModals = document.querySelectorAll('[data-modal]');
+
+console.log('modalButtons', modalButtons);
+
+//Кнопки открыть модалку
+modalButtons.forEach((item) => {
+  console.log('item', item);
+  item.addEventListener('click', (e) => {
+    const modalId = e.target.dataset.modalButton;
+
+    console.log('modalId', modalId);
+    const findModalElement = document.querySelector('#' + modalId);
+
+    console.log('findModalElement', findModalElement);
+
+    findModalElement.classList.remove('hidden');
+
+    //Ещё один варинат закрытия по фейду
+    // findModalElement
+    //   .querySelector('.modal-window')
+    //   .addEventListener('click', (e) => {
+    //     e.stopPropagation();
+    //   });
+  });
 });
 
-closeBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  if (e.target) {
-    modalOverly.classList.remove('open-modal');
-  }
+//Кнопки закрыть модалку
+modalButtonsClose.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const modalIdClose = e.target
+      .closest('[data-modal]')
+      .classList.add('hidden');
+    //console.log('modalIdClose', modalIdClose);
+  });
 });
 
-// when user clicks modal-btn add .open-modal to modal-overlay
-// when user clicks close-btn remove .open-modal from modal-overlay
-modalOverly.addEventListener('click', (e) => {
-  e.preventDefault();
-  const some = e.target.classList.contains('common');
+// Закрытие модалки по фейду
+allModals.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const fadeBlocClick = e.target.classList.contains('fade-block');
 
-  if (!some) {
-    modalOverly.classList.remove('open-modal');
-  }
+    if (fadeBlocClick) {
+      e.target.classList.add('hidden');
+    } else if (!fadeBlocClick) {
+      return;
+    }
+  });
 });

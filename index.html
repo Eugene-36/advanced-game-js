@@ -14,10 +14,19 @@
   </head>
   <body>
     <header class="head">
-      <button data-help-btn="" class="icon-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M0 0h24v24H0z" fill="none"></path>
+      <button data-modal-button="modal-1" class="icon-btn" type="button">
+        <svg
+          data-modal-button="modal-1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
           <path
+            data-modal-button="modal-1"
+            d="M0 0h24v24H0z"
+            fill="none"
+          ></path>
+          <path
+            data-modal-button="modal-1"
             style="fill: #ccc"
             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
           ></path>
@@ -40,13 +49,14 @@
       </button>
       <h1 class="title">2048 Daily</h1>
       <div class="wrapperScore">
-        <span class="styleScore">Score</span>
+        <span class="styleScore">Score :</span>
         <div data-total-result>0</div>
       </div>
     </header>
     <main>
       <!-- Маодальное окно -->
-      <div class="modal-overlay">
+      <!-- <div class="modal-overlay">
+
         <div class="modal-container common">
           <h3 class="common">How To Play</h3>
           <p class="text-pr">
@@ -67,8 +77,55 @@
           </p>
           <button class="close-btn">Х</button>
         </div>
-      </div>
+      </div> -->
       <!-- ====== -->
+
+      <!--? Новое модальное окно № 1 -->
+      <div id="modal-1" data-modal class="fade-block hidden">
+        <div class="modal-window">
+          <div class="card">
+            <div class="card-header">How To Play</div>
+            <div class="card-body">
+              <p class="text-pr">
+                Combine tiles of the same number in an attempt to create a tile
+                with the value 2048. Pressing the arrow keys or swiping across
+                the game board will move all tiles in the direction of the key
+                pressed/swipe. After all the tiles are done moving a new tile
+                with the value of 2 or 4 will be created in a random empty cell.
+                Two tiles with the same number will merge when they collide to
+                create a single tile with double the value. The game is over
+                when there are no valid ways for you to move the tiles.
+              </p>
+              <p class="text-pr">
+                IMPORTANT: Each day a new game is generated which is exactly the
+                same for everyone in the world. Come back each day and share
+                your results with your friends so you can claim your title as
+                the best 2048 player.
+              </p>
+              <button data-modal-close class="close-btn">Х</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--?  -->
+      <!--? Новое модальное окно № 2 -->
+      <div id="modal-2" data-modal class="fade-block hidden">
+        <div class="modal-window">
+          <div class="card">
+            <div class="card-header">Модальное окно №2</div>
+            <div class="card-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                posuere erat a ante.
+              </p>
+              <button data-modal-close type="button" class="btn btn-dark">
+                Закрыть окно
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--?  -->
       <div id="game-board"></div>
     </main>
     <script

@@ -18,7 +18,7 @@ body {
   height: 100vh;
   width: min-content;
   margin: 0 auto;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #game-board {
@@ -69,10 +69,14 @@ body {
   border-bottom: 1px solid #ccc;
   width: 100%;
 
-  margin-bottom: 50px;
-  padding-bottom: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  align-items: center;
+
+  margin-bottom: 10px;
+  height: 80px;
+
+  /* padding-bottom: 15px; */
+  /* margin-top: 15px; */
+  /* margin-bottom: 15px; */
 }
 
 .title {
@@ -86,7 +90,10 @@ body {
   width: 5vmin;
   /* height: 5vmin; */
   min-width: 35px;
-  min-height: 35px;
+  /* min-height: 35px; */
+  background-color: aqua;
+
+  height: 35px;
   background: none;
   border: none;
   cursor: pointer;
@@ -113,7 +120,7 @@ div[data-total-result] {
 }
 
 /* ! Стили для модального окна */
-.modal-overlay {
+/* .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -126,7 +133,7 @@ div[data-total-result] {
   visibility: hidden;
   z-index: -10;
 }
-/* OPEN/CLOSE MODAL */
+
 .open-modal {
   visibility: visible;
   z-index: 10;
@@ -165,4 +172,93 @@ div[data-total-result] {
 
 .common {
   color: #ccc;
+  padding: 15px;
+} */
+
+/*! Стили для нового варианта модального окна  */
+.list-header {
+  font-weight: 700;
+}
+.text-pr {
+  font-size: max(2vmin, 16px);
+  color: #ccc;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-red-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.list-content {
+  background-color: rgb(216, 246, 239);
+}
+
+.fade-block {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(8, 112, 32, 0.69); */
+
+  /* ========================= */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000bf;
+  display: grid;
+  place-items: center;
+
+  /* visibility: hidden; */
+  z-index: 10;
+}
+
+.modal-window {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content-hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+[data-name],
+[data-tab] {
+  cursor: pointer;
+}
+.card {
+  background-color: #111;
+  color: #ccc;
+  border-radius: 0.5rem;
+  width: 90vw;
+  min-height: 30vh;
+  max-width: 620px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 15px;
+}
+
+.wrapperScore {
+  display: flex;
+  align-items: center;
+}
+
+.styleScore {
+  margin-right: 15px;
 }
