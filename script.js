@@ -1,5 +1,6 @@
 import Grid from './Grid.js';
 import Tile from './Tile.js';
+import { looseCart } from './Modal.js';
 
 const gameBoard = document.getElementById('game-board');
 
@@ -8,8 +9,6 @@ const grid = new Grid(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
 setupInput();
-
-
 
 function setupInput() {
   window.addEventListener('keydown', handleInput, { once: true });
@@ -65,7 +64,7 @@ async function handleInput(e) {
     console.log('Попал в это блок');
 
     newTile.waitForTransition(true).then(() => {
-      alert('You Lose');
+      looseCart();
     });
     return;
   }
@@ -138,5 +137,3 @@ function canMove(cells) {
     });
   });
 }
-
-

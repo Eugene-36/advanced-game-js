@@ -39,14 +39,10 @@ console.log('modalButtons', modalButtons);
 
 //Кнопки открыть модалку
 modalButtons.forEach((item) => {
-  console.log('item', item);
   item.addEventListener('click', (e) => {
     const modalId = e.target.dataset.modalButton;
 
-    console.log('modalId', modalId);
     const findModalElement = document.querySelector('#' + modalId);
-
-    console.log('findModalElement', findModalElement);
 
     findModalElement.classList.remove('hidden');
 
@@ -81,3 +77,9 @@ allModals.forEach((item) => {
     }
   });
 });
+// looseCart();
+export function looseCart() {
+  allModals[1].classList.remove('hidden');
+
+  setTimeout(() => allModals[1].classList.add('hidden'), 10000);
+}
