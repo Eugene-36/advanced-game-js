@@ -68,7 +68,6 @@ async function handleInput(e) {
     newTile.waitForTransition(true).then(() => {
       looseCart();
       clearInterval(intervalID);
-      console.log('intervalID', intervalID);
     });
     return;
   }

@@ -17,8 +17,6 @@ export default class Grid {
         Math.floor(index / GRID_SIZE)
       );
     });
-
-    // console.log('this.cells', this.cells);
   }
 
   get cells() {
